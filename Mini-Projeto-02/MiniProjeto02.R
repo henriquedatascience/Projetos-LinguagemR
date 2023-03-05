@@ -8,14 +8,12 @@ install.packages('sqldf')
 install.packages('ggplot2')
 install.packages('hrbrthemes')
 install.packages('GGally')
-install.packages('dplyr')
 
 # Carregando pacotes
 library(sqldf)
 library(ggplot2)
 library(hrbrthemes)
 library(GGally)
-library(dplyr)
 
 # Carregando dataset
 df <- read.csv('dataset.csv')
@@ -106,8 +104,6 @@ sqldf('SELECT Idade, AVG(CustoDaInternacao) as CustoTotal
 ########################### Linguagem R ########################### 
 
 # Qual a distribuição da idade dos pacientes que frequentam o hospital?
-?element_text
-?ggtitle
 ggplot(df, aes(x = Idade)) +
   geom_histogram(binwidth=3, fill="#69b3a2", color='#e9ecef', alpha=0.9) +
   ggtitle('Distribuição de Idade dos Pacientes') +
